@@ -1,6 +1,5 @@
 <div class="jumbo">
   <div class="right tomster">
-
   </div>
   <h2>Welcome!</h2>
   <p>We hope you find exactly what you're looking for in a place to stay.</p>
@@ -8,3 +7,19 @@
     About Us
   {{/link-to}}
 </div>
+{{#each model as |rental|}}
+<article class="listing">
+  <div class="detail owner">
+    <span>Owner: {{rental.owner}}</span>
+  </div>
+  <div class="detail type">
+    <span>Type: {{rental.category}}</span>
+  </div>
+  <div class="detail location">
+    <span>Location: {{rental.city}}</span>
+  </div>
+  <div class="detail bedrooms">
+    <span>Number of Bedrooms: {{rental.bedrooms}}</span>
+  </div>
+</article>
+{{/each}}
