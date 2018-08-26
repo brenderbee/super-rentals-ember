@@ -22,6 +22,9 @@ module('Acceptance | list rentals', function(hooks) {
   });
 
   test('should link to contact information.', async function (assert) {
+    await visit('/');
+    await click('.menu-contact');
+    assert.equal(currentURL(), '/contact', 'should navigate to about');
   });
 
   test('should list available rentals.', async function (assert) {
