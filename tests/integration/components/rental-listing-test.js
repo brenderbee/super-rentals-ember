@@ -22,7 +22,7 @@ module('Integration | Component | rental-listing', function(hooks) {
     await render(hbs`{{rental-listing rental=rentalTest}}`);
     assert.equal(this.element.querySelector('.listing h3').textContent.trim(), 'test-title', 'Title: test-title');
     assert.equal(this.element.querySelector('.listing .owner').textContent.trim(), 'Owner: test-owner', 'Owner: test-owner');
-    assert.equal(this.element.querySelector('.listing .type').textContent.trim(), 'Type: test-type', 'Type: test-type');
+    assert.equal(this.element.querySelector('.listing .type').textContent.trim(), 'Type: Standalone - test-type', 'Type: test-type');
     assert.equal(this.element.querySelector('.listing .location').textContent.trim(), 'Location: test-city', 'Location: test-city');
     assert.equal(this.element.querySelector('.listing .bedrooms').textContent.trim(), 'Number of bedrooms: 3', 'Number of bedrooms: 3');
   });
