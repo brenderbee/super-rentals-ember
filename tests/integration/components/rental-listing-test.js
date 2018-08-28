@@ -12,18 +12,23 @@ module('Integration | Component | rental-listing', function(hooks) {
       image: 'fake.png',
       title: 'test-title',
       owner: 'test-owner',
-      type: 'test-type',
+      category: 'test-type',
       city: 'test-city',
       bedrooms: 3
     });
   });
 
   test('should display rental details', async function(assert) {
-
+    await render(hbs`{{rental-listing rental=rental}}`);
+    assert.equal(this.element.querySelector('.listing h3').textContent.trim(), 'test-title', 'Title: test-title');
+    assert.equal(this.element.querySelector('.listing .owner').textContent.trim(), 'Owner: test-owner', 'Owner: test-owner');
+    assert.equal(this.element.querySelector('.listing .type').textContent.trim(), 'Type: test-type', 'Type: test-type');
+    assert.equal(this.element.querySelector('.listing .location').textContent.trim(), 'Location: test-city', 'Location: test-city');
+    assert.equal(this.element.querySelector('.listing .bedrooms').textContent.trim(), 'Number of bedrooms: 3', 'Number of bedrooms: 3');
   });
 
   test('should toggle wide class on click', async function(assert) {
-
+    // await render(hbs`{{rental-listing rental=rental}}`);
   });
 
 });
